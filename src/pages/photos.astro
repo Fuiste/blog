@@ -6,14 +6,10 @@ import PhotoCard from "../components/PhotoCard.astro";
 const photos = (await getCollection("photos")).sort((a, b) => a.data.order - b.data.order);
 ---
 
-<BaseLayout title="Photos" description="A small photo archive carried over from the previous version of the site.">
+<BaseLayout title="Photos" description="A small photo archive from Madison and beyond.">
   <section class="page-hero">
-    <p class="eyebrow">Photos</p>
-    <h1>A smaller, calmer gallery.</h1>
-    <p>
-      The previous site was image-led. This version keeps that thread alive with a concise
-      selection rather than trying to mirror every old gallery page.
-    </p>
+    <h1>Photos</h1>
+    <p>Street and landscape work, mostly from the Upper Midwest.</p>
   </section>
 
   <section class="section-block">
@@ -24,4 +20,3 @@ const photos = (await getCollection("photos")).sort((a, b) => a.data.order - b.d
     </div>
   </section>
 </BaseLayout>
-

@@ -11,7 +11,6 @@ const { project } = Astro.props;
 <article class="card project-card">
   <div class="card-meta">
     <span>{project.data.status}</span>
-    <span>{project.data.tags.join(" / ")}</span>
   </div>
   <h3>{project.data.title}</h3>
   <p>{project.data.summary}</p>
@@ -25,4 +24,3 @@ const { project } = Astro.props;
     ))}
   </ul>
 </article>
-

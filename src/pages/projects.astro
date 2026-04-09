@@ -6,14 +6,10 @@ import ProjectCard from "../components/ProjectCard.astro";
 const projects = (await getCollection("projects")).sort((a, b) => a.data.order - b.data.order);
 ---
 
-<BaseLayout title="Projects" description="A curated set of open source projects and experiments by William Pelrine.">
+<BaseLayout title="Projects" description="A curated set of open source projects and experiments.">
   <section class="page-hero">
-    <p class="eyebrow">Projects</p>
-    <h1>Curated work, not a complete inventory.</h1>
-    <p>
-      A few repositories that feel representative: type-safe utilities, image tools, and software
-      with a clear point of view.
-    </p>
+    <h1>Projects</h1>
+    <p>A handful of repositories worth highlighting.</p>
   </section>
 
   <section class="section-block">
@@ -24,4 +20,3 @@ const projects = (await getCollection("projects")).sort((a, b) => a.data.order -
     </div>
   </section>
 </BaseLayout>
-

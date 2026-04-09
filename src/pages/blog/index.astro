@@ -8,14 +8,10 @@ const posts = (await getCollection("posts", ({ data }) => !data.draft)).sort(
 );
 ---
 
-<BaseLayout title="Blog" description="Essays and notes by William Pelrine on software, functional programming, and building things with taste.">
+<BaseLayout title="Blog" description="Essays on software, functional programming, and building things with care.">
   <section class="page-hero">
-    <p class="eyebrow">Blog</p>
-    <h1>Writing with enough room to think.</h1>
-    <p>
-      Technical notes, explanations, and longer pieces that benefit from more shape than a social
-      post ever gets.
-    </p>
+    <h1>Blog</h1>
+    <p>Technical notes, explanations, and longer essays.</p>
   </section>
 
   <section class="section-block">
@@ -26,4 +22,3 @@ const posts = (await getCollection("posts", ({ data }) => !data.draft)).sort(
     </div>
   </section>
 </BaseLayout>
-

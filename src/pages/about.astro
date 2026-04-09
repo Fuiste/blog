@@ -1,60 +1,33 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import SectionHeading from "../components/SectionHeading.astro";
 import { siteConfig } from "../data/site";
 ---
 
-<BaseLayout title="About" description="About William Pelrine, the writing on this site, and the photography archive carried over from the previous version.">
+<BaseLayout title="About" description="About William Pelrine — developer and photographer in Madison, WI.">
   <section class="page-hero">
-    <p class="eyebrow">About</p>
-    <h1>Software, photographs, and a site that can age well.</h1>
-    <p>
-      This rebuild starts from a simple line on the older site: William is a software developer and
-      photographer in Madison, WI. The new version gives that sentence a better home.
-    </p>
+    <h1>About</h1>
   </section>
 
   <section class="about-grid">
     <div class="about-copy">
-      <div class="about-card">
-        <SectionHeading
-          eyebrow="Who this is"
-          title="A place to collect the technical and the visual"
-          description="Not a product page, not a resume dump, and not only a gallery."
-        />
-        <p>
-          William Pelrine writes software, thinks in systems, and still wants room online for image
-          making. The older Squarespace site leaned heavily on photography, with a blog and a short
-          about page living around it. This version keeps those instincts, but gives each part a
-          clearer role.
-        </p>
-        <p>
-          The blog is for essays, notes, and explanations that deserve more than a thread. The
-          projects section is intentionally curated rather than exhaustive. The photo gallery stays
-          small on purpose, more like an archive drawer than a firehose.
-        </p>
-      </div>
-
-      <div class="about-card">
-        <SectionHeading
-          eyebrow="Reach out"
-          title="Contact and social trails"
-          description="The easiest path is still email."
-        />
-        <p>
-          Email: <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
-        </p>
-        <p>
-          You can also find ongoing work and older writing through the linked social accounts in the
-          footer.
-        </p>
-      </div>
+      <p>
+        William Pelrine is a software developer and photographer based in Madison, WI. He works
+        primarily with functional programming, type systems, and developer tooling.
+      </p>
+      <p>
+        Outside of code, he maintains a small photography practice — mostly street and landscape
+        work shot around the Upper Midwest.
+      </p>
+      <p>
+        This site collects longer writing, a few curated projects, and a selection of photographs.
+        The best way to get in touch is <a href={`mailto:${siteConfig.email}`}>email</a>.
+      </p>
     </div>
 
     <div class="about-media">
       <img
         src="/images/about/william-pelrine-portrait.jpg"
-        alt="Portrait of William Pelrine working at a desk beside glowing monitors"
+        alt="Portrait of William Pelrine"
         loading="eager"
       />
     </div>

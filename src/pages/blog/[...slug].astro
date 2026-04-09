@@ -19,7 +19,6 @@ const { Content } = await render(post);
 <BaseLayout title={post.data.title} description={post.data.description} image={post.data.heroImage}>
   <article>
     <header class="post-shell">
-      <p class="eyebrow">Essay</p>
       <h1>{post.data.title}</h1>
       <p>{post.data.description}</p>
       <p class="card-meta">
@@ -40,4 +39,3 @@ const { Content } = await render(post);
     </div>
   </article>
 </BaseLayout>
-

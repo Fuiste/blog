@@ -5,14 +5,13 @@ import SectionHeading from "../components/SectionHeading.astro";
 import PostCard from "../components/PostCard.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import PhotoCard from "../components/PhotoCard.astro";
-import SocialLinks from "../components/SocialLinks.astro";
 import { siteConfig } from "../data/site";
 
 const byDateDesc = <T extends { data: { pubDate: Date } }>(a: T, b: T) =>
   b.data.pubDate.getTime() - a.data.pubDate.getTime();
 
 const posts = (await getCollection("posts", ({ data }) => !data.draft)).sort(byDateDesc);
-const featuredPosts = posts.filter((post) => post.data.featured).slice(0, 2);
+const featuredPosts = posts.filter((post) => post.data.featured).slice(0, 3);
 const projects = (await getCollection("projects")).sort((a, b) => a.data.order - b.data.order);
 const featuredProjects = projects.filter((project) => project.data.featured).slice(0, 3);
 const photos = (await getCollection("photos")).sort((a, b) => a.data.order - b.data.order);
@@ -21,65 +20,32 @@ const featuredPhotos = photos.filter((photo) => photo.data.featured).slice(0, 3)
 
 <BaseLayout>
   <section class="hero">
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <p class="eyebrow">{siteConfig.hero.eyebrow}</p>
-        <h1>{siteConfig.hero.headline}</h1>
-        <p>{siteConfig.hero.body}</p>
-        <div class="hero-actions">
-          <a class="button-link is-primary" href={siteConfig.hero.primaryCta.href}>
-            {siteConfig.hero.primaryCta.label}
-          </a>
-          <a class="button-link is-secondary" href={siteConfig.hero.secondaryCta.href}>
-            {siteConfig.hero.secondaryCta.label}
-          </a>
-        </div>
-      </div>
-
-      <aside class="hero-aside">
-        <ul class="meta-list">
-          <li>
-            <strong>Based in</strong>
-            <span>{siteConfig.location}</span>
-          </li>
-          <li>
-            <strong>Writing about</strong>
-            <span>Functional programming, tools, and how software feels to build.</span>
-          </li>
-          <li>
-            <strong>Making room for</strong>
-            <span>Selected photography, small software experiments, and a site that can keep evolving.</span>
-          </li>
-        </ul>
-        <SocialLinks />
-      </aside>
+    <h1>{siteConfig.hero.headline}</h1>
+    <p>{siteConfig.hero.body}</p>
+    <div class="hero-actions">
+      <a class="button-link is-primary" href={siteConfig.hero.primaryCta.href}>
+        {siteConfig.hero.primaryCta.label}
+      </a>
+      <a class="button-link is-secondary" href={siteConfig.hero.secondaryCta.href}>
+        {siteConfig.hero.secondaryCta.label}
+      </a>
     </div>
   </section>
 
   <section class="section-block">
-    <SectionHeading
-      eyebrow="Recent writing"
-      title="Essays and notes"
-      description="Longer pieces on software, tradeoffs, and the sort of ideas worth slowing down for."
-    />
+    <SectionHeading title="Writing" />
     <div class="card-grid">
       {featuredPosts.map((post) => (
         <PostCard post={post} />
       ))}
     </div>
     <p class="page-copy">
-      <a class="divider-link" href="/blog">
-        See all writing
-      </a>
+      <a class="divider-link" href="/blog">All posts &rarr;</a>
     </p>
   </section>
 
   <section class="section-block">
-    <SectionHeading
-      eyebrow="Selected work"
-      title="Projects with a point of view"
-      description="A small set of repositories that feel representative of the kind of tools and systems being built."
-    />
+    <SectionHeading title="Projects" />
     <div class="card-grid">
       {featuredProjects.map((project) => (
         <ProjectCard project={project} />
@@ -88,41 +54,14 @@ const featuredPhotos = photos.filter((photo) => photo.data.featured).slice(0, 3)
   </section>
 
   <section class="section-block">
-    <SectionHeading
-      eyebrow="Photo archive"
-      title="A lighter gallery"
-      description="A few photographs carried over from the older site to keep the image-making side of the work visible."
-    />
+    <SectionHeading title="Photos" />
     <div class="photo-grid">
       {featuredPhotos.map((photo) => (
         <PhotoCard photo={photo} />
       ))}
     </div>
     <p class="page-copy">
-      <a class="divider-link" href="/photos">
-        Browse the gallery
-      </a>
+      <a class="divider-link" href="/photos">All photos &rarr;</a>
     </p>
   </section>
-
-  <section class="section-block">
-    <SectionHeading
-      eyebrow="About"
-      title="A personal site that should stay personal"
-      description="The old version had strong instincts buried inside an aging setup. This rebuild keeps the useful parts and makes them easier to keep alive."
-    />
-    <div class="card about-card">
-      <p>
-        William is a software developer and photographer in Madison, WI. This version of the site
-        keeps writing, open source work, and photography in the same place without forcing any one
-        of them to become the whole story.
-      </p>
-      <p class="page-copy">
-        <a class="divider-link" href="/about">
-          Read more about the site and the person behind it
-        </a>
-      </p>
-    </div>
-  </section>
 </BaseLayout>
-
