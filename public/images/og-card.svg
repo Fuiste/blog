@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="grad" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#f8f1e8" />
+      <stop offset="100%" stop-color="#eadbc5" />
+    </linearGradient>
+    <radialGradient id="wash" cx="0.2" cy="0.1" r="0.8">
+      <stop offset="0%" stop-color="#d8a06c" stop-opacity="0.55" />
+      <stop offset="100%" stop-color="#d8a06c" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grad)" />
+  <rect width="1200" height="630" fill="url(#wash)" />
+  <circle cx="980" cy="170" r="150" fill="#a24d2d" fill-opacity="0.12" />
+  <circle cx="1040" cy="500" r="220" fill="#7d2f1a" fill-opacity="0.1" />
+  <text x="80" y="170" font-family="Fraunces, serif" font-size="54" fill="#a24d2d">William Pelrine</text>
+  <text x="80" y="275" font-family="Fraunces, serif" font-size="110" font-weight="700" fill="#1d1a16">
+    Code, essays,
+  </text>
+  <text x="80" y="390" font-family="Fraunces, serif" font-size="110" font-weight="700" fill="#1d1a16">
+    and photographs.
+  </text>
+  <text x="82" y="470" font-family="Manrope, sans-serif" font-size="34" fill="#5c544b">
+    A personal blog and portfolio built on Astro.
+  </text>
+</svg>
+

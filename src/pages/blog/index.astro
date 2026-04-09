@@ -1,0 +1,29 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PostCard from "../../components/PostCard.astro";
+
+const posts = (await getCollection("posts", ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
+);
+---
+
+<BaseLayout title="Blog" description="Essays and notes by William Pelrine on software, functional programming, and building things with taste.">
+  <section class="page-hero">
+    <p class="eyebrow">Blog</p>
+    <h1>Writing with enough room to think.</h1>
+    <p>
+      Technical notes, explanations, and longer pieces that benefit from more shape than a social
+      post ever gets.
+    </p>
+  </section>
+
+  <section class="section-block">
+    <div class="card-grid">
+      {posts.map((post) => (
+        <PostCard post={post} />
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+

@@ -1,0 +1,62 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import { siteConfig } from "../data/site";
+---
+
+<BaseLayout title="About" description="About William Pelrine, the writing on this site, and the photography archive carried over from the previous version.">
+  <section class="page-hero">
+    <p class="eyebrow">About</p>
+    <h1>Software, photographs, and a site that can age well.</h1>
+    <p>
+      This rebuild starts from a simple line on the older site: William is a software developer and
+      photographer in Madison, WI. The new version gives that sentence a better home.
+    </p>
+  </section>
+
+  <section class="about-grid">
+    <div class="about-copy">
+      <div class="about-card">
+        <SectionHeading
+          eyebrow="Who this is"
+          title="A place to collect the technical and the visual"
+          description="Not a product page, not a resume dump, and not only a gallery."
+        />
+        <p>
+          William Pelrine writes software, thinks in systems, and still wants room online for image
+          making. The older Squarespace site leaned heavily on photography, with a blog and a short
+          about page living around it. This version keeps those instincts, but gives each part a
+          clearer role.
+        </p>
+        <p>
+          The blog is for essays, notes, and explanations that deserve more than a thread. The
+          projects section is intentionally curated rather than exhaustive. The photo gallery stays
+          small on purpose, more like an archive drawer than a firehose.
+        </p>
+      </div>
+
+      <div class="about-card">
+        <SectionHeading
+          eyebrow="Reach out"
+          title="Contact and social trails"
+          description="The easiest path is still email."
+        />
+        <p>
+          Email: <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+        </p>
+        <p>
+          You can also find ongoing work and older writing through the linked social accounts in the
+          footer.
+        </p>
+      </div>
+    </div>
+
+    <div class="about-media">
+      <img
+        src="/images/about/william-pelrine-portrait.jpg"
+        alt="Portrait of William Pelrine working at a desk beside glowing monitors"
+        loading="eager"
+      />
+    </div>
+  </section>
+</BaseLayout>

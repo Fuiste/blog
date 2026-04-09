@@ -1,0 +1,27 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PhotoCard from "../components/PhotoCard.astro";
+
+const photos = (await getCollection("photos")).sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout title="Photos" description="A small photo archive carried over from the previous version of the site.">
+  <section class="page-hero">
+    <p class="eyebrow">Photos</p>
+    <h1>A smaller, calmer gallery.</h1>
+    <p>
+      The previous site was image-led. This version keeps that thread alive with a concise
+      selection rather than trying to mirror every old gallery page.
+    </p>
+  </section>
+
+  <section class="section-block">
+    <div class="photo-grid">
+      {photos.map((photo) => (
+        <PhotoCard photo={photo} />
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
