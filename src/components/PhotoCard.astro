@@ -11,12 +11,4 @@ const { photo } = Astro.props;
 
 <figure class="photo-card">
   <img src={url(photo.data.image)} alt={photo.data.alt} loading="lazy" />
-  <figcaption>
-    <span>{photo.data.title}</span>
-    {(photo.data.location || photo.data.takenAt) && (
-      <span>
-        {[photo.data.location, photo.data.takenAt].filter(Boolean).join(" · ")}
-      </span>
-    )}
-  </figcaption>
 </figure>
