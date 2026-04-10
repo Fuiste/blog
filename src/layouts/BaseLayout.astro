@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import { siteConfig } from "../data/site";
+import { url } from "../lib/url";
 
 interface Props {
   title?: string;
@@ -39,12 +40,12 @@ const ogImage = new URL(image ?? "/images/og-card.svg", Astro.site ?? Astro.url)
   <body>
     <div class="page-chrome">
       <header class="site-header">
-        <a class="site-mark" href="/">{siteConfig.title}</a>
+        <a class="site-mark" href={url("/")}>{siteConfig.title}</a>
         <nav aria-label="Primary">
           <ul class="nav-list">
             {siteConfig.navigation.map((item) => (
               <li>
-                <a href={item.href}>{item.label}</a>
+                <a href={url(item.href)}>{item.label}</a>
               </li>
             ))}
           </ul>

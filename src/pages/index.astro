@@ -6,6 +6,7 @@ import PostCard from "../components/PostCard.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import PhotoCard from "../components/PhotoCard.astro";
 import { siteConfig } from "../data/site";
+import { url } from "../lib/url";
 
 const byDateDesc = <T extends { data: { pubDate: Date } }>(a: T, b: T) =>
   b.data.pubDate.getTime() - a.data.pubDate.getTime();
@@ -23,10 +24,10 @@ const featuredPhotos = photos.filter((photo) => photo.data.featured).slice(0, 3)
     <h1>{siteConfig.hero.headline}</h1>
     <p>{siteConfig.hero.body}</p>
     <div class="hero-actions">
-      <a class="button-link is-primary" href={siteConfig.hero.primaryCta.href}>
+      <a class="button-link is-primary" href={url(siteConfig.hero.primaryCta.href)}>
         {siteConfig.hero.primaryCta.label}
       </a>
-      <a class="button-link is-secondary" href={siteConfig.hero.secondaryCta.href}>
+      <a class="button-link is-secondary" href={url(siteConfig.hero.secondaryCta.href)}>
         {siteConfig.hero.secondaryCta.label}
       </a>
     </div>
@@ -40,7 +41,7 @@ const featuredPhotos = photos.filter((photo) => photo.data.featured).slice(0, 3)
       ))}
     </div>
     <p class="page-copy">
-      <a class="divider-link" href="/blog">All posts &rarr;</a>
+      <a class="divider-link" href={url("posts")}>All posts &rarr;</a>
     </p>
   </section>
 
@@ -61,7 +62,7 @@ const featuredPhotos = photos.filter((photo) => photo.data.featured).slice(0, 3)
       ))}
     </div>
     <p class="page-copy">
-      <a class="divider-link" href="/photos">All photos &rarr;</a>
+      <a class="divider-link" href={url("photos")}>All photos &rarr;</a>
     </p>
   </section>
 </BaseLayout>

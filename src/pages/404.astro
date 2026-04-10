@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { url } from "../lib/url";
 ---
 
 <BaseLayout title="Not Found">
@@ -7,8 +8,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <h1>Page not found</h1>
     <p>Nothing here. Try heading back home or to the blog.</p>
     <div class="hero-actions" style="margin-top: 1.5rem;">
-      <a class="button-link is-primary" href="/">Home</a>
-      <a class="button-link is-secondary" href="/blog">Blog</a>
+      <a class="button-link is-primary" href={url("/")}>Home</a>
+      <a class="button-link is-secondary" href={url("posts")}>Posts</a>
     </div>
   </section>
 </BaseLayout>

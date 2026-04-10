@@ -11,18 +11,18 @@ export const siteConfig = {
     body: "Essays on functional programming, a handful of open source projects, and a small photo archive.",
     primaryCta: {
       label: "Read the blog",
-      href: "/blog"
+      href: "posts"
     },
     secondaryCta: {
       label: "Browse projects",
-      href: "/projects"
+      href: "projects"
     }
   },
   navigation: [
-    { label: "Blog", href: "/blog" },
-    { label: "Projects", href: "/projects" },
-    { label: "Photos", href: "/photos" },
-    { label: "About", href: "/about" }
+    { label: "Posts", href: "posts" },
+    { label: "Projects", href: "projects" },
+    { label: "Photos", href: "photos" },
+    { label: "About", href: "about" }
   ],
   socials: [
     { label: "GitHub", href: "https://github.com/Fuiste" },
