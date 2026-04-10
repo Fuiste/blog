@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { siteConfig } from "../data/site";
+import { url } from "../lib/url";
 ---
 
 <BaseLayout title="About" description="About William Pelrine — developer and photographer in Madison, WI.">
@@ -26,7 +27,7 @@ import { siteConfig } from "../data/site";
 
     <div class="about-media">
       <img
-        src="/images/about/william-pelrine-portrait.jpg"
+        src={url("images/about/william-pelrine-portrait.jpg")}
         alt="Portrait of William Pelrine"
         loading="eager"
       />
